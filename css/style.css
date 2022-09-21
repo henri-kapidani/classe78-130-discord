@@ -1,3 +1,5 @@
+/* reset */
+
 * {
 	margin: 0;
 	padding: 0;
@@ -8,23 +10,46 @@ html {
 	font-family: 'Roboto', sans-serif;
 }
 
+body {
+	margin-top: 4rem;
+}
+
+h1, h2 {
+	font-size: 2.5rem;
+}
+
+h1 {
+	margin-bottom: 1.5rem;
+}
+
+h2 {
+	margin-bottom: 1rem;
+}
+
+p {
+	line-height: 1.6;
+}
+
 /* general styles */
 
 .container {
 	max-width: 1000px;
 	margin: 0 auto;
+	padding: 0 1rem;
 }
 
 .container-small {
 	max-width: 600px;
 	margin: 0 auto;
+	padding: 0 1rem;
 }
 
 .btn {
 	display: inline-block;
-	padding: 1em 1.5em;
+	padding: .6em 1.5em;
 	border-radius: 10em;
 	text-decoration: none;
+	white-space: nowrap;
 }
 
 .btn-white {
@@ -37,18 +62,21 @@ html {
 	color: white;
 }
 
-header {
-	background-color: #255EE9;
-	/* padding: 0 1rem; */
-}
-
+/* header */
 .menu-top {
-	height: 4em;
+	position: fixed;
+	top: 0;
+	right: 0;
+	left: 0;
+	height: 4rem;
+	overflow-x: hidden;
+	background-color: #255EE9;
 }
 
 .menu-top ul {
 	display: flex;
 	height: 100%;
+	gap: .6rem;
 }
 
 .menu-top li {
@@ -62,7 +90,6 @@ header {
 	align-items: center;
 	height: 100%;
 	padding: 0 1em;
-	margin: 0 .3em;
 	color: white;
 	text-decoration: none;
 	white-space: nowrap;
@@ -75,14 +102,28 @@ header {
 
 .menu-top .logo {
 	margin-right: auto;
+	flex: 1 1 0;
+}
+
+.menu-top .logo a {
+	height: 100%;
+}
+
+.menu-top .logo img {
+	display: block;
+	height: 100%;
+	padding: 1em 0;
 }
 
 .menu-top .accedi {
 	margin-left: auto;
+	flex: 1 1 0;
+	display: flex;
+	justify-content: flex-end;
 }
 
 .header-background {
-	padding: 4rem 0 3rem;
+	padding: 5rem 0 5rem;
 	background-image: url("../img/jumbo.png");
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -95,14 +136,79 @@ header {
 	color: white;
 }
 
-.header-content h1 {
+.header-content p {
 	margin-bottom: 1rem;
 }
 
-.header-content p {
-	margin-bottom: .5rem;
+.header-content .btns {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 1rem;
 }
 
 .fa-arrow-down {
-	margin-right: 2em;
+	margin-right: .4em;
+}
+
+/* sections */
+
+.section {
+	padding: 7rem 0;
+}
+
+.bkg-gray {
+	background-color: lightgray;
+}
+
+.cols-2 {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 3rem;
+}
+
+.cols-2.reverse {
+	flex-direction: row-reverse;
+}
+
+.cols-2 .contents {
+	flex: 1 1 250px;
+	/* min-width: 250px; */
+}
+
+.cols-2 .img {
+	display: block;
+	flex: 2 1 460px;
+}
+
+.cols-2 img {
+	display: block;
+	width: 100%;
+	min-width: 200px;
+}
+
+.wave {
+	display: block;
+	width: 100%;
+}
+
+.wave.rotated {
+	transform: rotateZ(180deg) rotateY(180deg);
+}
+
+.yellow path {
+	fill: yellow;
+}
+
+.red path {
+	fill: red;
+}
+
+.svg-background::before {
+	content: '';
+	display: block;
+	height: 100px;
+	background-image: url("data:image/svg+xml,%3Csvg class='wave-1hkxOo' version='1.1' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 100' preserveAspectRatio='none'%3E%3Cpath class='wavePath-haxJK1 animationPaused-2hZ4IO' d='M826.337463,25.5396311 C670.970254,58.655965 603.696181,68.7870267 447.802481,35.1443383 C293.342778,1.81111414 137.33377,1.81111414 0,1.81111414 L0,150 L1920,150 L1920,1.81111414 C1739.53523,-16.6853983 1679.86404,73.1607868 1389.7826,37.4859505 C1099.70117,1.81111414 981.704672,-7.57670281 826.337463,25.5396311 Z' fill='lightgray'%3E%3C/path%3E%3C/svg%3E");
+	background-size: 100%;
+	background-repeat: no-repeat;
 }
